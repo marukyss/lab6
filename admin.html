@@ -65,7 +65,7 @@
 
     table.innerHTML = ""
 
-    if (data.length === 0) {
+    if (data == null) {
       toggleTablePlaceholderVisibility(true)
       return
     }
@@ -111,7 +111,7 @@
 
   async function refreshTable() {
     // Clear the table
-    setTableEntries([])
+    setTableEntries(null)
 
     // Invoke the API request and update the table
     const result = await apiReadResponses()
@@ -146,7 +146,7 @@
 
   async function initTable() {
     // Initialize the table
-    setTableEntries([])
+    setTableEntries(null)
 
     const result = await apiReadResponses()
     if (result.error == null) {
